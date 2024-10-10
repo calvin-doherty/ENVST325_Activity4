@@ -68,17 +68,6 @@ ggplot()+
   geom_line()+
   labs(x = "Date", y = "Solar Radiation")
 
-# Prompt 3
-timeCheck900 <- function(x){
-  intervals <- x[-length(x)] %--% x[-1]
-  interval_times <- int_length(intervals)
-  intervals[interval_times != 900]
-  
-}
-
-timeCheck900(weather$dateF)
-
-
 # Question 1
 weatherClean <- weather %>%
   filter(Precip>=0 & XLevel<2 & YLevel<2)
